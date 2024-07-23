@@ -4,22 +4,24 @@ import {
   AiFillGithub,
   AiFillInstagram,
 } from "react-icons/ai";
-import { FaFacebook, FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { FaPlay } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
-import resumePDF from "../../assets/Resume.pdf";
 import Arsalan_Ashraf_Resume from "../../assets/Arsalan_Ashraf_Resume.pdf";
 
 const handleHireMeClick = () => {
   // Replace 'your-email@example.com' with your email address
-  const email = 'arsalanashraf562562@gmail.com';
-  const subject = 'Job Opportunity';
-  const body = 'Hello,\n\nI am interested in discussing a job opportunity with you.\n\nSincerely,\n[Your Name]';
-  
+  const email = "arsalanashraf562562@gmail.com";
+  const subject = "Job Opportunity";
+  const body =
+    "Hello,\n\nI am interested in discussing a job opportunity with you.\n\nSincerely,\n[Your Name]";
+
   // Constructing the mailto link
-  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  
+  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
+
   // Opening the default email client with pre-filled email
   window.location.href = mailtoLink;
 };
@@ -79,18 +81,24 @@ const Hero = () => {
             <ul
               data-aos="fade-up"
               data-aos-duration="1500"
-              className=" flex gap-5"
+              className="flex gap-5"
             >
               <li>
-                <a href="https://github.com/arsalanash">
-                  {" "}
-                  <AiFillGithub className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-150" />{" "}
+                <a
+                  href="https://github.com/arsalanash"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AiFillGithub className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-150" />
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/arsalan-ashraf-aa602b237/">
-                  {" "}
-                  <FaLinkedinIn className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125 " />{" "}
+                <a
+                  href="https://www.linkedin.com/in/arsalan-ashraf-aa602b237/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedinIn className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />
                 </a>
               </li>
             </ul>
@@ -116,6 +124,7 @@ const Hero = () => {
                   alt=""
                 />
                 <FaPlay className=" text-black absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]" />
+                
               </div>
             </div>
           </div>

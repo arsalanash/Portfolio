@@ -34,9 +34,23 @@ const Resume = () => {
               </div>
               {/* design */}
               <div className=" flex flex-col gap-1 sm:gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
-                <h1 className="text-[1.4rem] font-semibold sm:text-xl">
-                  FrontEnd Developer
-                </h1>
+                <h2 className="text-[1.4rem] font-semibold sm:text-xl">
+                  Software Developer Intern
+                </h2>
+                <span className=" text-[.9rem] font-semibold text-gray-500 sm:text-base">
+                  Keyom AI
+                </span>
+                <span className=" text-[.9rem] font-semibold text-yellow-500 sm:text-base">
+                  May 2024 - August 2024
+                </span>
+                <p className=" text-[.9rem] text-justify break-words text-gray-500">
+                <li>Designed a Responsive Webpage using Figma.</li>
+                <li>Developed Full Webpage using React and Material UI.</li>
+                <li>Implemented user authentication with Amazon Cognito.</li>
+                </p>
+                <h2 className="text-[1.4rem] font-semibold sm:text-xl">
+                  FrontEnd Developer Intern
+                </h2>
                 <span className=" text-[.9rem] font-semibold text-gray-500 sm:text-base">
                   Intellicuria
                 </span>
@@ -45,9 +59,8 @@ const Resume = () => {
                 </span>
                 <p className=" text-[.9rem] text-justify break-words text-gray-500">
                 <li>Created 2 pages Add slot and Medical Data Extractor.</li>
-                <li>Rectified UIissues on the Start Page.</li>
-                <li>Integrated APIs using Postman for retrieving data on multiple pages.</li>
-                <li>Acquired proficiency in Redux, a sophisticated state management library, enhancing project capabilities and scalability</li>
+                <li>Rectified UI issues on the Start Page.</li>
+                <li>Integrated APIs using Postman for retrieving data.</li>
                 </p>
               </div>
             </div>

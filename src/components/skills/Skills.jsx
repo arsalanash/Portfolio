@@ -11,8 +11,13 @@ import {
   SiMongodb,
   SiExpress,
   SiPython,
+  SiNodedotjs,
+  SiTypescript,
+  SiJira,
+  SiGit,
+  SiDocker
 } from "react-icons/si";
-import { GrCode } from "react-icons/gr";
+import { GrCode,GrGithub } from "react-icons/gr";
 import { SiNextdotjs } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io";
@@ -56,6 +61,10 @@ const Skills = ({ darkMode }) => {
                   name={"Tailwind CSS"}
                   value={70}
                 />
+                <ProgressBar logo={<SiNodedotjs />} name={"Node Js"} value={85} />
+                <ProgressBar logo={<SiExpress />} name={"Express Js"} value={75} />
+                <ProgressBar logo={<SiMongodb />} name={"Mongo DB"} value={80} />
+                <ProgressBar logo={<SiTypescript />} name={"TypeScript"} value={65} />
               </div>
             </div>
           </div>
@@ -72,27 +81,42 @@ const Skills = ({ darkMode }) => {
                 skill={"C++"}
               />
               <SkillBox
-                logo={<SiMongodb  />}
+                logo={<SiJira  />}
                 black={"white"}
                 white={"black"}
-                skill={"MongoDB"}
+                skill={"Jira"}
+              />
+              <SkillBox
+                logo={<GrGithub  />}
+                black={"black"}
+                white={"white"}
+                skill={"Github"}
               />
             </div>
             <div className="last2 flex flex-col gap-10">
               <SkillBox
                 logo={<SiPython />}
-                black={"black"}
-                white={"white"}
+                black={"white"}
+                white={"black"}
                 skill={"Python"}
               />
               <SkillBox
                 className=""
                 logo={
-                  <SiNextdotjs />
+                  <SiGit />
+                }
+                black={"black"}
+                white={"white"}
+                skill={"Git"}
+              />
+              <SkillBox
+                className=""
+                logo={
+                  <SiDocker />
                 }
                 black={"white"}
                 white={"black"}
-                skill={"Next JS"}
+                skill={"Docker"}
               />
               {/* <SkillBox
                 className=""
