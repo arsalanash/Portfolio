@@ -1,7 +1,12 @@
-# Portfolio
-<<<<<<< HEAD
 
-LINK: https://sandip-portfoliojs.netlify.app/
-=======
+LIVE LINK: (https://portfolio-psi-three-46.vercel.app/)
+
 This is my Portfolio Website
->>>>>>> 2c7726525599f26c813a926a8c1dca02c9c8a0a9
+
+To Clone and run
+git clone https://github.com/arsalanash/Portfolio.git
+cd Portfolio
+npm i
+npm run dev  
+if port is busy you can use
+vite --port {PORT NUMBER}
