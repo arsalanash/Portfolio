@@ -9,6 +9,7 @@ import { FiDownload } from "react-icons/fi";
 import { FaPlay } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 import Arsalan_Ashraf_Resume from "../../assets/Arsalan_Ashraf_Resume.pdf";
+import Photo from '../../assets/776.jpg'
 
 const handleHireMeClick = () => {
   // Replace 'your-email@example.com' with your email address
@@ -109,7 +110,7 @@ const Hero = () => {
             <img
               data-aos="fade-up"
               className=" h-[90%]  w-full object-cover md:h-[95%] md:m-auto sm:m-0"
-              src="https://i.postimg.cc/15q2hLXX/776.jpg"
+              src={Photo}
               alt="mine"
             />
             <div className=" absolute bottom-10 md:bottom-3 right-8 md:right-2">
