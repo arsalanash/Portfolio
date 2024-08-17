@@ -13,13 +13,14 @@ import Arsalan_Ashraf_Resume from "../../assets/Arsalan_Ashraf_Resume.pdf";
 
 const handleHireMeClick = () => {
   // Replace 'your-email@example.com' with your email address
-  const email = 'arsalanashraf562562@gmail.com';
-  const subject = 'Job Opportunity';
-  const body = 'Hello,\n\nI am interested in discussing a job opportunity with you.\n\nSincerely,\n[Your Name]';
-  
+  const email = "arsalanashraf562562@gmail.com";
+  const subject = "Job Opportunity";
+  const body =
+    "Hello,\n\nI am interested in discussing a job opportunity with you.\n\nSincerely,\n[Your Name]";
+
   // Constructing the mailto link
   const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  
+
   // Opening the default email client with pre-filled email
   window.location.href = mailtoLink;
 };
@@ -100,10 +101,12 @@ const Hero = () => {
           <div className="relative h-[88%] w-fit flex items-center sm:items-end">
             <img
               data-aos="fade-up"
-              className=" h-[90%]  w-full object-cover md:h-[95%] md:m-auto sm:m-0"
+              className="h-[90%] w-full object-cover md:h-[95%] md:m-auto sm:m-0 border"
+              style={{ borderRadius: "120px" }}
               src="https://i.postimg.cc/15q2hLXX/776.jpg"
               alt="mine"
             />
+
             <div className=" absolute bottom-10 md:bottom-3 right-8 md:right-2">
               <div
                 data-aos="zoom-in"
