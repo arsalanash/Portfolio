@@ -1,31 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
+import { RiLink } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Resume = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const internships = [
+    {
+      title: "Software Developer Intern",
+      company: "Keyom AI",
+      link: "https://www.keyom.ai/",
+      date: "May 2024 - August 2024",
+      description: (
+        <ul>
+          <li>Designed a Responsive Webpage using Figma.</li>
+          <li>Developed Full Webpage using React and Material UI.</li>
+          <li>Implemented user authentication with Amazon Cognito.</li>
+        </ul>
+      ),
+    },
+    {
+      title: "FrontEnd Developer Intern",
+      company: "Intellicuria",
+      link: "https://www.intellicuria.com/",
+      date: "October 2023 - January 2024",
+      description: (
+        <ul>
+          <li>Created 2 pages Add slot and Medical Data Extractor.</li>
+          <li>Rectified UI issues on the Start Page.</li>
+          <li>Integrated APIs using Postman for retrieving data.</li>
+        </ul>
+      ),
+    },
+  ];
+
+  const handleDotClick = (index) => {
+    setCurrentSlide(index);
+  };
+
   return (
-    <div id="resume" className=" container m-auto   mt-16">
+    <div id="resume" className="container m-auto mt-16">
       {/* heading */}
       <div data-aos="fade-up" className="relative mb-5">
-        <h3 className=" text-3xl font-black text-gray-400 sm:text-2xl">
+        <h3 className="text-3xl font-black text-gray-400 sm:text-2xl">
           Resume
         </h3>
         <span className="h-[1.1px] right-0 absolute w-[92%] bg-gray-300 block"></span>
       </div>
       <div data-aos="fade-up" className="left flex-1 w-full">
-        <p className=" text-gray-700 font-medium w-[100%]">
+        <p className="text-gray-700 font-medium w-[100%]">
           Here are my experiences and qualifications.
         </p>
       </div>
-      {/* card*/}
+      {/* card */}
       <div className="card-wrapper w-[90%] sm:w-full mt-5 flex md:flex-col sm:gap-5 mx-auto ">
         <div className="left flex-1 flex items-center justify-center">
           <fieldset
             data-aos="zoom-in"
-            className=" w-[80%] p-5 py-12 sm:py-8 sm:w-full sm:p-2"
+            className="w-[80%] p-5 py-12 sm:py-8 sm:w-full sm:p-2"
           >
-            <legend className=" w-auto ml-[50%] translate-x-[-50%] border-2 border-gray-200 rounded-3xl py-1 px-8 font-semibold text-xl text-yellow-500">
+            <legend className="w-auto ml-[50%] translate-x-[-50%] border-2 border-gray-200 rounded-3xl py-1 px-8 font-semibold text-xl text-yellow-500">
               Experience
             </legend>
-            <div className=" relative">
+            <div className="relative">
               {/* design */}
               <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
                 <div className="c1 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
@@ -33,22 +70,57 @@ const Resume = () => {
                 <div className="c2 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
               </div>
               {/* design */}
-              <div className=" flex flex-col gap-1 sm:gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
-                <h1 className="text-[1.4rem] font-semibold sm:text-xl">
-                  FrontEnd Developer
-                </h1>
-                <span className=" text-[.9rem] font-semibold text-gray-500 sm:text-base">
-                  Intellicuria
-                </span>
-                <span className=" text-[.9rem] font-semibold text-yellow-500 sm:text-base">
-                  October 2023 - January 2024
-                </span>
-                <p className=" text-[.9rem] text-justify break-words text-gray-500">
-                <li>Created 2 pages Add slot and Medical Data Extractor.</li>
-                <li>Rectified UIissues on the Start Page.</li>
-                <li>Integrated APIs using Postman for retrieving data on multiple pages.</li>
-                <li>Acquired proficiency in Redux, a sophisticated state management library, enhancing project capabilities and scalability</li>
-                </p>
+              <div className="card-wrapper w-[100%] sm:w-full mt-5 flex flex-col items-center mx-auto">
+                <div className="relative w-full flex items-center justify-center overflow-hidden">
+                  <div className="carousel-container w-full sm:w-full overflow-hidden">
+                    <div
+                      className="carousel-inner flex transition-transform duration-500"
+                      style={{
+                        transform: `translateX(-${currentSlide * 100}%)`,
+                      }}
+                    >
+                      {internships.map((internship, index) => (
+                        <div
+                          className="carousel-item w-full flex-shrink-0"
+                          key={index}
+                        >
+                          <div className="flex flex-col gap-1 sm:gap-1 border-2 hover:border-yellow-400 hover:shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg bg-white">
+                            <h1 className="text-[1.4rem] font-semibold sm:text-xl">
+                              {internship.title}
+                            </h1>
+                            <Link
+                              to={internship.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <span className="text-[1rem] font-semibold text-gray-500 sm:text-base flex items-center gap-1">
+                                <RiLink /> {internship.company}
+                              </span>
+                            </Link>
+                            <span className="text-[.9rem] font-semibold text-yellow-500 sm:text-base">
+                              {internship.date}
+                            </span>
+                            <p className="text-[.9rem] text-justify break-words text-gray-500">
+                              {internship.description}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {/* Dots */}
+                <div className="dots mt-4 flex justify-center gap-2">
+                  {internships.map((_, index) => (
+                    <div
+                      key={index}
+                      onClick={() => handleDotClick(index)}
+                      className={`cursor-pointer w-2 h-2 rounded-full ${
+                        currentSlide === index ? "bg-yellow-500" : "bg-gray-300"
+                      }`}
+                    ></div>
+                  ))}
+                </div>
               </div>
             </div>
           </fieldset>
@@ -56,12 +128,12 @@ const Resume = () => {
         <div className="right flex-1 flex items-center justify-center">
           <fieldset
             data-aos="zoom-in"
-            className=" w-[80%] p-5 py-12 sm:py-8 sm:w-full sm:p-2"
+            className="w-[80%] p-5 py-12 sm:py-8 sm:w-full sm:p-2"
           >
-            <legend className=" w-auto ml-[50%] translate-x-[-50%] border-2 border-gray-200 rounded-3xl py-1 px-8 font-semibold text-xl text-yellow-500">
+            <legend className="w-auto ml-[50%] translate-x-[-50%] border-2 border-gray-200 rounded-3xl py-1 px-8 font-semibold text-xl text-yellow-500">
               Education
             </legend>
-            <div className=" relative">
+            <div className="relative">
               {/* design */}
               <div className="design flex absolute left-[-150px] top-1/2 items-center rotate-[90deg] sm:left-[-160px] ">
                 <div className="c1 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
@@ -69,19 +141,20 @@ const Resume = () => {
                 <div className="c2 w-[12px] h-[12px] rounded-full bg-white border-2 border-yellow-500"></div>
               </div>
               {/* design */}
-              <div className=" flex flex-col gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg">
+              <div className="flex flex-col gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg bg-white">
                 <h1 className="text-[1.4rem] font-semibold sm:text-xl">
                   B.Tech, Electronics and Communication Engineering
                 </h1>
-                <span className=" text-[.9rem] font-semibold text-gray-500 sm:text-base">
-                  IIIT Kalyani
-                </span>
-                <span className=" text-[.9rem] font-semibold text-yellow-500 sm:text-base">
+                <Link to="https://www.iiitkalyani.ac.in/">
+                  <span className="text-[1rem] font-semibold text-gray-500 sm:text-base flex items-center gap-1">
+                    <RiLink /> IIIT Kalyani
+                  </span>
+                </Link>
+                <span className="text-[.9rem] font-semibold text-yellow-500 sm:text-base">
                   Year 2021 - Year 2025
                 </span>
-                <p className=" text-[.9rem] text-justify text-gray-500">
-                  <li>CGPA: 8.2</li>
-                  Relevant Coursework
+                <p className="text-[.9rem] text-justify text-gray-500">
+                  <li>CGPA: 8.28</li>
                   <li>Algorithms and Data Structures</li>
                   <li>Web Development</li>
                   <li>Machine Learning</li>

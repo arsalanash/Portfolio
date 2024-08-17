@@ -27,22 +27,21 @@ const navItems = [
 ];
 
 const handleHireMeClick = () => {
-  // Replace 'your-email@example.com' with your email address
-  const email = 'arsalanashraf562562@gmail.com';
-  const subject = 'Job Opportunity';
-  const body = 'Hello,\n\nI am interested in discussing a job opportunity with you.\n\nSincerely,\n[Your Name]';
-  
-  // Constructing the mailto link
-  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  
-  // Opening the default email client with pre-filled email
+  const email = "arsalanashraf562562@gmail.com";
+  const subject = "Job Opportunity";
+  const body =
+    "Hello,\n\nI am interested in discussing a job opportunity with you.\n\nSincerely,\n[Your Name]";
+
+  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
+
   window.location.href = mailtoLink;
 };
 const NavBar = ({ toggleDarkMode, darkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
 
-  // Toggle the navbar
   const toggleNav = (name) => {
     setIsOpen(!isOpen);
     setActiveIndex(name === activeIndex ? null : name);
@@ -74,7 +73,7 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
             to="/"
             className="text-3xl font-bold sm:text-3xl"
           >
-            Arsalan Ashraf.
+            Arsalan Ashraf
           </Link>
         </div>
         <div
@@ -117,9 +116,13 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
                 </a>
               </li>
             ))}
-            
-            <button  className="bg-black text-[1rem] text-white px-8 py-2 rounded-lg font-bold hover:text-yellow-400 md:m-5 md:block md:mx-auto md:w-fit lg:px-3"
-             onClick={handleHireMeClick}>Hire Me</button>
+
+            <button
+              className="bg-black text-[1rem] text-white px-8 py-2 rounded-lg font-bold hover:text-yellow-400 md:m-5 md:block md:mx-auto md:w-fit lg:px-3"
+              onClick={handleHireMeClick}
+            >
+              Hire Me
+            </button>
           </ul>
         </div>
       </nav>
